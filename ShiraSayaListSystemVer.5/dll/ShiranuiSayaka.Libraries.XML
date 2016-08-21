@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ShiranuiSayaka.Libraries</name>
+    </assembly>
+    <members>
+        <member name="T:ShiranuiSayaka.Libraries.ExcelControl">
+            <summary>
+            現在起動・表示中のExcelシートを操作します
+            </summary>
+        </member>
+        <member name="P:ShiranuiSayaka.Libraries.ExcelControl.WorkSheet">
+            <summary>
+            Excelシートのインスタンス（Microsoft.Office.Interop.Excel.Worksheet）です
+            </summary>
+        </member>
+        <member name="P:ShiranuiSayaka.Libraries.ExcelControl.IsCanUse">
+            <summary>
+            Excelシートのインスタンスが取得され、操作が可能かどうかを示します。
+            可能ならばTrueが入っています
+            </summary>
+        </member>
+        <member name="M:ShiranuiSayaka.Libraries.ExcelControl.#ctor">
+            <summary>
+            現在起動・表示中のExcelシートを操作します。
+            コンストラクターでは起動中のExcelシートのインスタンスを取得し、Excelシートの操作を可能にします
+            </summary>
+        </member>
+        <member name="M:ShiranuiSayaka.Libraries.ExcelControl.ReadCell(System.String)">
+            <summary>
+            表示中のExcelシートの値を読み取ります
+            </summary>
+            <param name="Range">セル番地「"A1"」形式</param>
+            <returns>セル番地に入力されている値</returns>
+        </member>
+        <member name="M:ShiranuiSayaka.Libraries.ExcelControl.WriteCell(System.String,System.String)">
+            <summary>
+            表示中のExcelシートに値を入力します
+            </summary>
+            <param name="Range">セル番地「"A1"」形式</param>
+            <param name="Value">セルに入力したい値</param>
+        </member>
+        <member name="M:ShiranuiSayaka.Libraries.ExcelControl.PrintSheet(System.Boolean)">
+            <summary>
+            表示中のExcelシートの最初のシートを１枚プリントアウトします
+            </summary>
+            <param name="IsNeedtoPreview">プレビューが必要ならばTrue、必要なければFalse</param>
+        </member>
+        <member name="T:ShiranuiSayaka.Libraries.AccessControl">
+            <summary>
+            AccessをOLEDBで操作します。
+            </summary>
+        </member>
+        <member name="P:ShiranuiSayaka.Libraries.AccessControl.IsCanUse">
+            <summary>
+            データベースの接続が確立され、操作が可能かを示します。
+            可能ならばTrueが入っています。
+            </summary>
+        </member>
+        <member name="M:ShiranuiSayaka.Libraries.AccessControl.#ctor(System.String)">
+            <summary>
+            AccessをOLEDBで操作します。
+            コンストラクターではデータベースとの接続を確立し、操作を可能にします
+            </summary>
+            <param name="DataSource">.accdbファイルの絶対パス</param>
+        </member>
+        <member name="M:ShiranuiSayaka.Libraries.AccessControl.SelectQuery(System.String)">
+            <summary>
+            SELECT文を実行し、内容をDictionary形式で返却します
+            </summary>
+            <param name="SQL">実行するSQL文（SELECT文のみ）</param>
+            <returns>Keyには列名、ValueにはList（string）形式で行が入っています</returns>
+        </member>
+        <member name="M:ShiranuiSayaka.Libraries.AccessControl.ControlQuery(System.String)">
+            <summary>
+            データベースの内容を変更するSQL文を実行します
+            </summary>
+            <param name="SQL">実行するSQL文（SELECT文以外）</param>
+        </member>
+        <member name="M:ShiranuiSayaka.Libraries.AccessControl.Close">
+            <summary>
+            データベースとの接続を切断します
+            デストラクターを使わず、こちらで切断を明示してください
+            </summary>
+        </member>
+        <member name="T:ShiranuiSayaka.Libraries.Properties.Resources">
+            <summary>
+              ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
+            </summary>
+        </member>
+        <member name="P:ShiranuiSayaka.Libraries.Properties.Resources.ResourceManager">
+            <summary>
+              このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
+            </summary>
+        </member>
+        <member name="P:ShiranuiSayaka.Libraries.Properties.Resources.Culture">
+            <summary>
+              厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
+              現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+            </summary>
+        </member>
+    </members>
+</doc>
